@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#10100f">
+<meta name="description" content="Saurabh Ahire — Filmmaker, Assistant Director and Art Director. Explore selected film and music video projects.">
+<title>Saurabh Ahire | Filmmaker Portfolio</title>
+
+<style>
+:root {
+  --bg: #10100f;
+  --panel: #181816;
+  --gold: #c9a56a;
+  --text: #f1eee7;
+  --muted: #a5a198;
+  --line: rgba(201,165,106,.25);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.container {
+  width: min(1180px, 90%);
+  margin: auto;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(16,16,15,.94);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(12px);
+}
+
+.nav {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  color: var(--gold);
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+nav { display: flex; gap: 24px; flex-wrap: wrap; }
+
+nav a {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: #d5d0c6;
+}
+
+nav a:hover { color: var(--gold); }
+
+.hero {
+  min-height: 650px;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: center;
+  gap: 45px;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(56px, 8vw, 100px);
+  font-weight: 400;
+  line-height: .98;
+  margin: 25px 0;
+  letter-spacing: -3px;
+}
+
+h1 span { color: var(--gold); }
+
+.hero-description {
+  max-width: 490px;
+  color: var(--muted);
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+.button {
+  display: inline-block;
+  padding: 14px 22px;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  transition: .25s;
+}
+
+.button:hover {
+  background: var(--gold);
+  color: #111;
+}
+
+.hero-visual {
+  min-height: 440px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  background:
+    radial-gradient(ellipse at 55% 40%, rgba(201,165,106,.18), transparent 48%),
+    linear-gradient(145deg, #25221c, #10100f 65%);
+}
+
+.hero-visual::before,
+.hero-visual::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(201,165,106,.18);
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+}
+
+.hero-visual::after {
+  width: 220px;
+  height: 220px;
+}
+
+.reel {
+  position: relative;
+  z-index: 1;
+  width: 145px;
+  height: 145px;
+  border: 9px solid var(--gold);
+  border-radius: 50%;
+  opacity: .7;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  gap: 7px;
+  padding: 18px;
+  transform: rotate(-18deg);
+  box-shadow: 0 0 70px rgba(201,165,106,.12);
+}
+
+.reel i {
+  width: 37px;
+  height: 37px;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+}
+
+.visual-label {
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+  right: 25px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.section { padding: 90px 0; }
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 35px;
+}
+
+h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(36px, 5vw, 58px);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.section-heading p {
+  color: var(--muted);
+  font-size: 13px;
+  max-width: 280px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.project-card {
+  min-width: 0;
+  background: var(--panel);
+  border: 1px solid rgba(255,255,255,.06);
+  transition: transform .25s, border-color .25s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--line);
+}
+
+.project-art {
+  height: 180px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background:
+    radial-gradient(ellipse at 80% 10%, rgba(201,165,106,.23), transparent 45%),
+    linear-gradient(135deg, #30291f, #171715 70%);
+  border-bottom: 1px solid var(--line);
+}
+
+.project-number {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.project-art strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(22px, 3vw, 32px);
+  line-height: 1.1;
+  font-weight: 400;
+  overflow-wrap: anywhere;
+}
+
+.project-info { padding: 20px; }
+
+.project-info h3 {
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: 7px;
+}
+
+.project-info p {
+  color: var(--muted);
+  font-size: 12px;
+  min-height: 38px;
+  margin-bottom: 17px;
+}
+
+.watch-link {
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.watch-link:hover { text-decoration: underline; }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.about-copy {
+  color: var(--muted);
+  font-size: 15px;
+  max-width: 650px;
+}
+
+.about-copy p + p { margin-top: 18px; }
+
+.role-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.role-list span {
+  border: 1px solid var(--line);
+  padding: 9px 13px;
+  font-size: 11px;
+  color: var(--gold);
+}
+
+.bts-panel {
+  border: 1px solid var(--line);
+  padding: 45px;
+  background:
+    radial-gradient(ellipse at 90% 0%, rgba(201,165,106,.1), transparent 50%),
+    var(--panel);
+}
+
+.bts-panel p {
+  color: var(--muted);
+  max-width: 650px;
+  margin: 15px 0 25px;
+}
+
+.contact-box {
+  padding: 45px;
+  border: 1px solid var(--line);
+  background: linear-gradient(120deg, #211f1a, #121211);
+}
+
+.contact-box p {
+  color: var(--muted);
+  margin: 18px 0 25px;
+}
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 25px 0;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.gold { color: var(--gold); }
+
+@media (max-width: 800px) {
+  .nav { padding: 18px 0; align-items: flex-start; }
+  nav { justify-content: flex-end; gap: 12px; }
+  nav a { font-size: 9px; }
+  .hero { grid-template-columns: 1fr; min-height: auto; gap: 35px; }
+  .hero-visual { min-height: 320px; }
+  .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .about-grid { grid-template-columns: 1fr; gap: 25px; }
+}
+
+@media (max-width: 500px) {
+  .nav { flex-direction: column; }
+  nav { justify-content: flex-start; }
+  .hero { padding-top: 55px; }
+  .project-grid { grid-template-columns: 1fr; }
+  .project-art { height: 200px; }
+  .section { padding: 65px 0; }
+  .section-heading { align-items: flex-start; flex-direction: column; }
+  .bts-panel, .contact-box { padding: 27px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="logo" href="#home">SA. AHIRE</a>
+    <nav aria-label="Main navigation">
+      <a href="#home">HOME</a>
+      <a href="#work">WORK</a>
+      <a href="#about">ABOUT</a>
+      <a href="#bts">BTS</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="container hero" id="home">
+  <div>
+    <p class="eyebrow">Independent Filmmaker · India</p>
+    <h1>Saurabh<br><span>Ahire.</span></h1>
+    <p class="hero-description">
+      Exploring stories through images, performances, spaces and cinematic
+      experiences. Working across art direction, on-set assistant direction
+      and acting.
+    </p>
+    <a class="button" href="#work">EXPLORE MY WORK &nbsp; ↘</a>
+  </div>
+
+  <div class="hero-visual" aria-label="Abstract cinematic film reel artwork">
+    <div class="reel" aria-hidden="true">
+      <i></i><i></i><i></i><i></i>
+    </div>
+    <div class="visual-label">
+      <span>FRAME · LIGHT · STORY</span>
+      <span>PORTFOLIO 2026</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="work">
+  <div class="container">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Selected projects</p>
+        <h2>Work &amp; Credits<span class="gold">.</span></h2>
+      </div>
+      <p>Selected music videos, short-film work and on-set experience.</p>
+    </div>
+
+    <div class="project-grid" id="projectGrid"></div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="container about-grid">
+    <div>
+      <p class="eyebrow">A little about me</p>
+      <h2>Behind every<br>frame is a story.</h2>
+    </div>
+    <div class="about-copy">
+      <p>
+        I am Saurabh Ahire, a filmmaker building my practice across
+        art direction, assistant direction and acting. My on-set experience
+        has helped me understand visual spaces, practical execution and
+        the collaborative process behind filmmaking.
+      </p>
+      <p>
+        My long-term focus is film direction and storytelling. This portfolio
+        brings together selected projects and will grow as I continue to work,
+        learn and create.
+      </p>
+      <div class="role-list">
+        <span>Art Direction</span>
+        <span>On-set Assistant Direction</span>
+        <span>Acting</span>
+        <span>Film Direction</span>
+        <span>Screenwriting</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="bts">
+  <div class="container">
+    <div class="bts-panel">
+      <p class="eyebrow">On-set archive</p>
+      <h2>Behind the Scenes<span class="gold">.</span></h2>
+      <p>
+        Production stills, set photographs and behind-the-scenes moments
+        will be added here. This section is ready for future updates.
+      </p>
+      <span class="gold">BTS ARCHIVE — COMING SOON</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="container">
+    <div class="contact-box">
+      <p class="eyebrow">Have a story to tell?</p>
+      <h2>Let's make<br>something meaningful.</h2>
+      <p>
+        Open to film, series and creative collaborations.
+        Contact details will be added here.
+      </p>
+      <a class="button" href="#home">BACK TO TOP ↑</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© 2026 SAURABH AHIRE</span>
+    <span>FILM · VISUALS · STORYTELLING</span>
+  </div>
+</footer>
+
+<script>
+/*
+  PROJECT UPDATE GUIDE:
+  Each project has a title, role and YouTube URL.
+  To edit a project later, change its details below.
+  Do not delete the commas between project entries.
+*/
+
+const projects = [
+  {
+    title: "Ek Chandanyachi Raat",
+    role: "Artist",
+    url: "https://youtu.be/4k_BQobcEm8"
+  },
+  {
+    title: "Shirpya — Short Film",
+    role: "Artist",
+    url: "https://youtu.be/FKOZ8ZL4xy8"
+  },
+  {
+    title: "Swami 1 / Swami 2",
+    role: "Art Director · On-set Assistant Director",
+    url: "https://youtu.be/WY7mogD-o3I"
+  },
+  {
+    title: "Ved Lavla Ved Lavla",
+    role: "Art Director · On-set Assistant Director",
+    url: "https://youtu.be/VC58SsLEsSg"
+  },
+  {
+    title: "Baap Vithuraya",
+    role: "Art Director · On-set Assistant Director",
+    url: "https://youtu.be/4uyrk0MwSS4"
+  },
+  {
+    title: "Zat Pat Pata Pat",
+    role: "Art Director · On-set Assistant Director",
+    url: "https://youtu.be/enYwcT6hjLQ"
+  },
+  {
+    title: "Chakari",
+    role: "Art Director · On-set Assistant Director",
+    url: "https://youtu.be/9rzp-UZjQzA"
+  },
+  {
+    title: "Sakhu",
+    role: "Art Director · On-set Assistant Director",
+    url: "https://youtu.be/3al1iiZSa08"
+  },
+  {
+    title: "Krushana Murari",
+    role: "Art Director · On-set Assistant Director",
+    url: "https://youtu.be/7jK4zhK4GFI"
+  },
+  {
+    title: "Shambhu Raja",
+    role: "Art Director · On-set Assistant Director",
+    url: "https://youtu.be/HtKtrFlv1Zo"
+  },
+  {
+    title: "Hire Moti",
+    role: "Art Director · On-set Assistant Director",
+    url: "https://youtu.be/_qkNgKoGYuE"
+  },
+  {
+    title: "96 Song",
+    role: "Art Director · On-set Assistant Director",
+    url: "https://youtu.be/GC4vfi8kIug"
+  },
+  {
+    title: "Maazi Raani",
+    role: "Art Director · On-set Assistant Director",
+    url: "https://youtu.be/FEEJzUrJLoc"
+  },
+  {
+    title: "Adakshya",
+    role: "Art Director · On-set Assistant Director",
+    url: "https://youtu.be/BD_uKNHbpyA"
+  },
+  {
+    title: "Pahilyanda 2",
+    role: "Art Director · On-set Assistant Director",
+    url: "https://youtu.be/SNBFOpDPUZo"
+  },
+  {
+    title: "Swami Naam",
+    role: "Art Director · On-set Assistant Director",
+    url: "https://youtu.be/qcLwIfi2-oo"
+  }
+];
+
+const grid = document.getElementById("projectGrid");
+
+projects.forEach((project, index) => {
+  const card = document.createElement("article");
+  card.className = "project-card";
+
+  const artwork = document.createElement("div");
+  artwork.className = "project-art";
+
+  const number = document.createElement("span");
+  number.className = "project-number";
+  number.textContent = `PROJECT ${String(index + 1).padStart(2, "0")}`;
+
+  const title = document.createElement("strong");
+  title.textContent = project.title;
+
+  artwork.append(number, title);
+
+  const info = document.createElement("div");
+  info.className = "project-info";
+
+  const heading = document.createElement("h3");
+  heading.textContent = project.title;
+
+  const role = document.createElement("p");
+  role.textContent = project.role;
+
+  const link = document.createElement("a");
+  link.className = "watch-link";
+  link.href = project.url;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+  link.textContent = "WATCH PROJECT ↗";
+
+  info.append(heading, role, link);
+  card.append(artwork, info);
+  grid.appendChild(card);
+});
+</script>
+
+</body>
+</html>
