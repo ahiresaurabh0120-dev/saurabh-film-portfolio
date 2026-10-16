@@ -363,7 +363,6 @@ projects.forEach((project, index) => {
   const number = document.createElement("span");
   number.className = "project-number";
   number.textContent = PROJECT ${String(index + 1).padStart(2, "0")};
-
   if (project.image) {
     const poster = document.createElement("img");
     poster.className = "project-poster";
